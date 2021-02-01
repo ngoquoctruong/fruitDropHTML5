@@ -1,0 +1,1 @@
+window._CCSettings={platform:"web-mobile",groupList:["Objects","Walls"],collisionMatrix:[[true,true],[true,false]],hasResourcesBundle:false,hasStartSceneBundle:false,remoteBundles:[],subpackages:[],launchScene:"db://assets/scenes/mainGame.fire",orientation:"",jsList:[],bundleVers:{internal:"279e0",main:"e3599"}};
