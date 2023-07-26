@@ -1,0 +1,141 @@
+html {
+  -ms-touch-action: none;
+}
+
+body, canvas, div {
+  display: block;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* Remove spin of input type number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  margin: 0;
+
+  cursor: default;
+  color: #888;
+  background-color: #333;
+
+  text-align: center;
+  font-family: Helvetica, Verdana, Arial, sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  
+  /* fix bug: https://github.com/cocos-creator/2d-tasks/issues/791 */
+  /* overflow cannot be applied in Cocos2dGameContainer, 
+  otherwise child elements will be hidden when Cocos2dGameContainer rotated 90 deg */
+  overflow: hidden;
+}
+
+#Cocos2dGameContainer {
+  position: absolute;
+  margin: 0;
+  left: 0px;
+  top: 0px;
+
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+}
+
+canvas {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+a:link, a:visited {
+  color: #666;
+}
+
+a:active, a:hover {
+  color: #666;
+}
+
+p.header {
+  font-size: small;
+}
+
+p.footer {
+  font-size: x-small;
+}
+
+#splash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #171717 url(./splash/bg.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.splash-art {
+  width: min(calc(100vh/1.33333),100%);
+  height: 100%;
+  background: #171717 url(./splash/loading.jpg) no-repeat center;
+  background-size: cover;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.progress-bar {
+  position: absolute;
+  top: 85%;
+  height: min(7%,100vw*0.1);
+  padding-top: 1.5%;
+  width: 80%;
+  border-radius: 7px;
+  background: url(./splash/progress.png);
+  left: 10%;
+  background-size: 100% 100%;
+  padding-bottom: 3%;
+  box-sizing: border-box;
+  padding-left: 2%;
+  padding-right: 2%;     
+}
+
+.progress-bar span {
+  display: block;
+  height: 100%;
+  border-radius: max(100vh,100vw);
+  transition: width .4s ease-in-out;
+  background-color: #3dc5de;
+}
+
+.stripes span {
+  background: url(./splash/bar.png);
+  background-size: auto 100%;
+}
+
+.loadingCaption {
+  color: white;
+  position: absolute;
+  top: calc(85% + min(7%,100vw*0.1));
+  width: 100%;
+  text-align: center;
+  font-size: min(2.2vh,3.5vw);
+  font-weight: bold;
+}
